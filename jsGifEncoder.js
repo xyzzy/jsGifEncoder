@@ -2,7 +2,7 @@
 	ultra fast GIF encoder for data URL written in javascript
 	https://github.com/xyzzy/jsGifEncoder
 
-	Version 1.0.0
+	Version 1.1.0
 
 	Copyright 2018 https://github.com/xyzzy
 
@@ -40,6 +40,17 @@ function GifEncoder(width, height) {
 		(Math.floor(width * height / 3838) + 1) * 1811 + // pixels
 		32 // unforeseen
 	);
+
+	/**
+	 * Precalculate 2 adjacent base64 characters (2*6 bits = 4096 combos)
+	 *
+	 * @type {string[]}
+	 */
+	this.base64Pair = new Array(4096);
+
+	var base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+	for (var i=0; i<4096; i++)
+		this.base64Pair[i] = base64Chars[(i >> 6) & 63] + base64Chars[(i >> 0) & 63];
 
 	/**
 	 * Encode
@@ -257,26 +268,17 @@ function GifEncoder(width, height) {
 		putByte(0);
 
 		// export as base64
-		var m = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-		var r = new Array(out_len * 4);
-		var ch1, ch2, ch3;
-		for (i = j = 0; i < out_len; i++) {
+		var res = new Array(out_len * 2 + 1);
+		j = 0;
+		res[j++] = "data:image/gif;base64,";
+		for (i = 0; i < out_len; i++) {
 			v = out_store[i];
-			v = (v << 16) | (v & 0x00ff00) | ((v & 0xff0000) >> 16);
-			ch1 = m[v & 63];
-			v >>= 6;
-			ch2 = m[v & 63];
-			v >>= 6;
-			ch3 = m[v & 63];
-			v >>= 6;
-			r[j++] = m[v & 63];
-			r[j++] = ch3;
-			r[j++] = ch2;
-			r[j++] = ch1;
+			res[j++] = this.base64Pair[((v & 0x0000ff) << 4) | ((v & 0x00f000) >> 12)];
+			res[j++] = this.base64Pair[((v & 0x000f00) << 0) | ((v & 0xff0000) >> 16)];
 		}
 
 		// return with appropriate header
-		return 'data:image/gif;base64,' + r.join('');
+		return  res.join('');
 	}
 	
 }

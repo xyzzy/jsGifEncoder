@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.0] 2018-01-26
+### Changed
+- Improved base64 encoding speed
+
 ## 1.0.0 2018-01-25
 ### Changed
 - General cleanup
@@ -15,4 +19,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial creation
 
-[Unreleased]: https://github.com/xyzzy/jsGifEncoder/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/xyzzy/jsGifEncoder/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/xyzzy/jsGifEncoder/compare/v1.0.0...v1.1.0
