@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## 2021-03-20 22:27:27 [Version 1.2.0]
+
 ```
 2021-03-17 15:34:30 Changed: Modernized SEO headers.
 2021-03-17 15:05:02 Added: `moonwalk` theme.
@@ -26,5 +28,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Historic commit.
 ```
 
-[Unreleased]: https://github.com/xyzzy/jsGifEncoder/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/xyzzy/jsGifEncoder/compare/v1.2.0...HEAD
+[Version 1.2.0]: https://github.com/xyzzy/jsGifEncoder/compare/v1.1.0...v1.2.0
 [Version 1.1.0]: https://github.com/xyzzy/jsGifEncoder/compare/v1.0.0...v1.1.0
