@@ -1,28 +1,45 @@
-# This is the repository of :star: jsGifEncoder :star:
+---
+layout: home
+title: "jsGifEncoder - Ultra-fast GIF encoder for data URL written in JavaScript"
+image: assets/favimage-472x472.jpg
+---
 
-`jsGifEncoder` is an ultra fast GIF encoder written in javascript.
+\[click on the image to start the encoder\]  
+[![preview](assets/favimage-472x472.jpg)](https://xyzzy.github.io/jsGifEncoder/)
 
-The code was created in may 2011 and was intended to create and load images for animations.
+# jsGifEncoder
+
+Ultra-fast GIF encoder for data URL written in JavaScript. [https://xyzzy.github.io/jsGifEncoder/](https://xyzzy.github.io/jsGifEncoder/)
+
+### Welcome to the Wonderful World of data URL's
+
+The code was created in May 2011 and was intended to create and load images for animations.
 
 Output is a data URL scheme as described in rfc2397.
 
-The demo html can be found https://www.rockingship.net/jsGifEncoder/jsGifEncoder.html
+The encoder is used by [jsFlightSim](https://xyzzy.github.io/jsFlightSim/)
 
 ## Usage
 
 Invocation example:
 
+```javascript
+        let encoder = new GifEncoder(width, height);
+        let data = encoder.encode(bpp, red, green, blue, pixels);
 ```
-var encoder = new GifEncoder(width, height);
-var data = encoder.encode(bpp, red, green, blue, pixels);
 
+Inject into HTML:
+
+```javascript
+        document.getElementById('img').src = data;
 ```
 
-Inject into HTML
+## Source code
 
-```
-document.getElementById('img').src = data;
+Grab one of the tarballs at [https://github.com/xyzzy/jsGifEncoder/releases](https://github.com/xyzzy/jsGifEncoder/releases) or checkout the latest code:
 
+```sh
+        git clone https://github.com/xyzzy/jsGifEncoder.git
 ```
 
 ## Versioning
@@ -32,4 +49,4 @@ For the versions available, see the [tags on this repository](https://github.com
 
 ## License
 
-This project is licensed under Affero GPLv3 - see the [LICENSE](LICENSE) file for details.
+This project is licensed under Affero GPLv3 - see the [LICENSE.txt](LICENSE.txt) file for details.
