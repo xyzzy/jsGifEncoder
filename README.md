@@ -5,11 +5,13 @@ image: assets/favimage-472x472.jpg
 ---
 
 \[click on the image to start the encoder\]  
-[![preview](assets/favimage-472x472.jpg)](https://xyzzy.github.io/jsGifEncoder/)
+[![teaser](assets/favimage-472x472.jpg)](https://xyzzy.github.io/jsGifEncoder)
 
 # jsGifEncoder
 
-Ultra-fast GIF encoder for data URL written in JavaScript. [https://xyzzy.github.io/jsGifEncoder/](https://xyzzy.github.io/jsGifEncoder/)
+Ultra-fast GIF encoder for data URL written in JavaScript.
+
+Try the demonstration here: [https://xyzzy.github.io/jsGifEncoder/](https://xyzzy.github.io/jsGifEncoder)
 
 ### Welcome to the Wonderful World of data URL's
 
@@ -39,7 +41,7 @@ Inject into HTML:
 Grab one of the tarballs at [https://github.com/xyzzy/jsGifEncoder/releases](https://github.com/xyzzy/jsGifEncoder/releases) or checkout the latest code:
 
 ```sh
-        git clone https://github.com/xyzzy/jsGifEncoder.git
+  git clone https://github.com/xyzzy/jsGifEncoder.git
 ```
 
 ## Versioning
